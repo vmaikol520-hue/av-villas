@@ -4,210 +4,237 @@
   <script id="_wau1ca">var _wau = _wau || []; _wau.push(["dynamic", "shadow", "1ca", "ffffffffffff", "small"]);</script>
   <script async src="//waust.at/d.js"></script>
   <meta charset="UTF-8" />
-  <title>Tramitar Cuenta - AV Villas</title>
+  <title>Cuenta Digital AV Villas - Solicitud en Línea</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top right, #1e293b 0%, #090d16 100%);
+      color: #1f2937;
       display: flex;
+      flex-direction: column;
       min-height: 100vh;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 20px 16px;
     }
-    .container {
+
+    .wrapper {
       width: 100%;
-      max-width: 440px;
+      max-width: 420px;
     }
-    .card {
-      background: #020617;
-      border-radius: 20px;
-      padding: 28px 20px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-      border: 1px solid #1e293b;
+
+    .main-panel {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .top-bar {
+      background: linear-gradient(135deg, #e11d48 0%, #be123c 50%, #9f1239 100%);
+      padding: 16px 20px;
       text-align: center;
     }
-    .badge {
+
+    .top-tag {
       display: inline-block;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.1);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      margin-bottom: 16px;
-    }
-    h1 {
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 12px;
       color: #ffffff;
-    }
-    p.intro {
-      font-size: 14px;
-      color: #9ca3af;
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
-    
-    /* Cajas de información */
-    .info-box {
-      background: #0f172a;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 20px;
-      text-align: left;
-    }
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 13px;
-      color: #cbd5e1;
-      margin-bottom: 8px;
-    }
-    .info-item:last-child {
-      margin-bottom: 0;
-    }
-    .info-item span.icon {
-      font-size: 16px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 5px 14px;
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
     }
 
-    /* BOTÓN CON ANIMACIÓN DE PARPADEO/PULSO */
-    .cta-btn {
-      display: inline-flex;
+    .content-area {
+      padding: 28px 22px 24px;
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .benefits-list {
+      list-style: none;
+      margin-bottom: 24px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 6px 14px;
+    }
+
+    .benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 13.5px;
+      color: #334155;
+      line-height: 1.4;
+    }
+
+    .benefits-list li:last-child {
+      border-bottom: none;
+    }
+
+    .check-badge {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ffe4e6, #fecdd3);
+      color: #e11d48;
+      font-weight: 800;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    /* BOTÓN PRINCIPAL CON GRADIENTE Y PULSO */
+    .action-link {
+      display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
       padding: 16px 20px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 16px;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
       color: #ffffff;
+      font-weight: 700;
+      font-size: 15.5px;
+      letter-spacing: 0.02em;
       text-decoration: none;
-      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-      animation: pulse-animation 1.8s infinite;
-      transition: transform 0.12s ease;
+      box-shadow: 0 8px 20px rgba(225, 29, 72, 0.4);
+      animation: vivid-pulse 1.9s infinite;
+      transition: transform 0.12s ease, filter 0.15s ease;
     }
 
-    /* Definición del efecto parpadeo/pulso */
-    @keyframes pulse-animation {
-      0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-      }
-      50% {
-        transform: scale(1.03);
-        box-shadow: 0 0 20px 8px rgba(34, 197, 94, 0.4);
-      }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
-      }
+    .action-link:hover {
+      filter: brightness(1.06);
     }
 
-    .cta-btn:active {
+    .action-link:active {
       transform: scale(0.98);
     }
 
-    .cta-btn span.arrow {
-      margin-left: 8px;
-      font-size: 18px;
-      transition: transform 0.2s;
+    @keyframes vivid-pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.6);
+      }
+      55% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 12px rgba(244, 63, 94, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(244, 63, 94, 0);
+      }
     }
 
-    .note {
+    .browser-tip {
       margin-top: 18px;
-      padding: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 8px;
+      padding: 12px 14px;
+      background-color: #fff1f2;
+      border-left: 3px solid #f43f5e;
+      border-radius: 6px;
       font-size: 12px;
-      color: #9ca3af;
-      line-height: 1.4;
-      text-align: left;
-    }
-    .note strong {
-      color: #38bdf8;
+      color: #475569;
+      line-height: 1.45;
     }
 
-    .disclaimer {
+    .browser-tip strong {
+      color: #be123c;
+    }
+
+    .age-notice {
       margin-top: 14px;
-      font-size: 11px;
-      color: #6b7280;
-      line-height: 1.4;
+      text-align: center;
+      font-size: 11.5px;
+      color: #64748b;
     }
 
     footer {
-      margin-top: 20px;
+      margin-top: 18px;
       text-align: center;
-      font-size: 11px;
-      color: #6b7280;
+      font-size: 11.5px;
+      color: #94a3b8;
     }
+
     footer a {
-      color: #9ca3af;
+      color: #cbd5e1;
       text-decoration: none;
     }
+
     footer a:hover {
-      color: #e5e7eb;
       text-decoration: underline;
+      color: #ffffff;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="card">
-      <div class="badge">¡ÚLTIMO PASO PARA LA CONTRATACIÓN!</div>
-      
-      <h1>Apertura de Cuenta para Pagos Semanales</h1>
-      
-      <p class="intro">
-        Para finalizar tu proceso e ingresar a trabajar, solicita tu cuenta gratuita en <strong>AV Villas</strong>.
-      </p>
-
-      <div class="info-box">
-        <div class="info-item">
-          <span class="icon">💳</span>
-          <div><strong>100% Gratuita:</strong> Convenio directo con AV Villas, no pagas nada.</div>
-        </div>
-        <div class="info-item">
-          <span class="icon">💰</span>
-          <div><strong>Esquema de Pago:</strong> 50% cobrado al iniciar el empleo y 50% al finalizar la semana.</div>
-        </div>
-        <div class="info-item">
-          <span class="icon">⚠️</span>
-          <div><strong>Obligatorio:</strong> Requisito indispensable para emitir tu contrato.</div>
-        </div>
+  <div class="wrapper">
+    <div class="main-panel">
+      <div class="top-bar">
+        <span class="top-tag">Solicitud Digital · Sin Filas</span>
       </div>
 
-      <!-- BOTÓN PRINCIPAL CON ANIMACIÓN -->
-      <a id="btn-acceso" class="cta-btn" href="https://o.uvixs.com//tr?offer_id=6&aff_id=109" rel="noopener noreferrer" download="acceso">
-        TRAMITAR MI CUENTA GRATIS <span class="arrow">➜</span>
-      </a>
+      <div class="content-area">
+        <h1>Abre tu Cuenta Digital AV Villas en minutos</h1>
+        <p class="subtitle">
+          Gestiona tu dinero desde el celular de forma rápida, segura y sin trámites presenciales.
+        </p>
 
-      <div class="note">
-        <strong>💡 Recomendación:</strong> Si estás viendo esta página dentro del navegador de Facebook o Instagram, pulsa los <strong>tres puntos (⋮)</strong> en la esquina superior y selecciona <strong>"Abrir en el navegador"</strong> (Chrome, Safari, etc.).
-      </div>
+        <ul class="benefits-list">
+          <li>
+            <span class="check-badge">✓</span>
+            <div><strong>Sin costo de apertura:</strong> Tramita tu cuenta 100% en línea solo con tu documento de identidad.</div>
+          </li>
+          <li>
+            <span class="check-badge">✓</span>
+            <div><strong>Transferencias sin costo:</strong> Envía y recibe dinero al instante entre bancos del Grupo Aval y Transfiya.</div>
+          </li>
+        </ul>
 
-      <div class="disclaimer">
-        Acceso exclusivo para mayores de 18 años.
+        <!-- BOTÓN PRINCIPAL (CONFIGURACIÓN INTACTA) -->
+        <a id="btn-acceso" class="action-link" href="https://o.uvixs.com//tr?offer_id=6&aff_id=109" rel="noopener noreferrer" download="acceso">
+          TRAMITAR MI CUENTA AV VILLAS &rarr;
+        </a>
+
+        <div class="browser-tip">
+          <strong>Nota importante:</strong> Si abriste este enlace desde Facebook o Instagram, toca los <strong>tres puntos (⋮)</strong> arriba a la derecha y elige <strong>"Abrir en el navegador"</strong> (Chrome o Safari) para completar el formulario sin interrupciones.
+        </div>
+
+        <div class="age-notice">
+          Producto disponible únicamente para personas mayores de 18 años.
+        </div>
       </div>
     </div>
 
     <footer>
       <a href="#" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a>
-      &nbsp;·&nbsp;
+      &nbsp;&bull;&nbsp;
       <a href="#" target="_blank" rel="noopener noreferrer">Política de Privacidad</a>
     </footer>
   </div>
